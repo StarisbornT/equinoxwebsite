@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: arial;
+            padding: 30px;
+            background: #eaebeb;
+        }
+        .project-count-wrap ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .project-count-wrap ul li {
+            width: 33.33%;
+            height: 100%;
+            padding: 30px 0px;
+            text-align: center;
+            transition: 0.2s linear;
+        }
+        .project-count-wrap ul li:hover {
+            transform: scale(1.1);
+        }
+        .project-count-wrap ul li:nth-child(1) {
+            background: rgb(16,31,46);
+        }
+        .project-count-wrap ul li:nth-child(2) {
+            background: rgb(18,34,51);
+        }
+        .project-count-wrap ul li:nth-child(3) {
+            background: rgb(21,38,56);
+        }
+        .project-count-wrap ul li p.number {
+            font-size: 40px;
+            padding: 0;
+            font-weight: bold;
+        }
+        .project-count-wrap ul li p {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            margin: 0;
+            padding: 10px;
+        }
+        .project-count-wrap ul li  span {
+            width: 60px;
+            background: rgba(255,255,255,0.8);
+            height: 2px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>PORJECT</h2>
+    <div class="project-count-wrap">
+        <ul>
+            <li>
+                <p id="number1" class="number">500</p>
+                <span></span>
+                <p>Project Done</p>
+            </li>
+            <li>
+                <p id="number2" class="number">89</p>
+                <span></span>
+                <p>HAppy Client</p>
+            </li>
+            <li>
+                <p id="number3" class="number">500</p>
+                <span></span>
+                <p>Project Done</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var project = setInterval(projectDone, 10)
+        var clients = setInterval(happyClients, 10)
+        var coffee = setInterval(cupscoffee, 10)
+        let count1 = 1;
+        let count2 = 1;
+        let count3 = 1;
+        function projectDone() {
+            count1++;
+            document.querySelector("#number1").innerHTML = count1;
+            if (count1 == 500) {
+                clearInterval(project)
+            }
+        }
+        function happyClients() {
+            count2++;
+            document.querySelector("#number2").innerHTML = count2;
+            if (count2 == 89) {
+                clearInterval(clients)
+            }
+        }
+        function cupscoffee() {
+            count3++;
+            document.querySelector("#number3").innerHTML = count3;
+            if (count3 == 359) {
+                clearInterval(coffee)
+            }
+        }
+    </script>
+</body>
+</html>
